@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ApricotFramework.CoreUtility/ApricotFramework.CoreUtility.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <File Path="tests\.editorconfig" />
+    <Project Path="tests/ApricotFramework.CoreUtility.Tests/ApricotFramework.CoreUtility.Tests.csproj" />
+  </Folder>
+</Solution>

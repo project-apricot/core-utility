@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Zero-dependency core utilities extending the .NET base class library: URL-safe SHA-256/SHA-512 hashing, cryptographically strong random strings, and small URL helpers.</Description>
+  </PropertyGroup>
+
+</Project>
