@@ -48,11 +48,17 @@ jobs:
       ${{ always()
           && (needs.prepare.result == 'success' || needs.prepare.result == 'skipped')
           && !(github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
-    uses: project-apricot/shared-workflows/.github/workflows/dotnet-lib-publish.yml@v1
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       id-token: write
-    with:
-      tag: ${{ github.event.release.tag_name || inputs.tag || needs.prepare.outputs.tag }}
-    secrets:
-      nuget_user: ${{ secrets.NUGET_USER }}
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.tag || needs.prepare.outputs.tag }}
+
+      - uses: project-apricot/shared-workflows/actions/dotnet-publish@v1
+        with:
+          tag: ${{ github.event.release.tag_name || inputs.tag || needs.prepare.outputs.tag }}
+          nuget_user: ${{ secrets.NUGET_USER }}
