@@ -1,0 +1,20 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    uses: project-apricot/shared-workflows/.github/workflows/dotnet-lib-publish.yml@v1
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      tag: ${{ github.event.release.tag_name }}
+    secrets:
+      nuget_user: ${{ secrets.NUGET_USER }}

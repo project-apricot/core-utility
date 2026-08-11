@@ -1,0 +1,33 @@
+name: Prepare release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Explicit version (e.g. 1.0.0). Leave empty to infer from commits.'
+        required: false
+        type: string
+        default: ''
+      dry_run:
+        description: 'Report the version without creating the release'
+        required: false
+        type: boolean
+        default: false
+      prerelease:
+        description: 'Mark the GitHub Release as a prerelease'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    uses: project-apricot/shared-workflows/.github/workflows/release-prepare.yml@v1
+    permissions:
+      contents: write
+    with:
+      version: ${{ inputs.version }}
+      dry_run: ${{ inputs.dry_run }}
+      prerelease: ${{ inputs.prerelease }}
