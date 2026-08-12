@@ -66,10 +66,9 @@ result safe to drop into a URL, a header, or a filename without escaping.
 
 `GetString(0)` returns an empty string.
 
-> **Note.** `GetString` currently maps random bytes onto the charset with a modulo, which
-> gives a very slight bias toward the first few characters (62 does not divide 2³²). It is
-> not enough to matter for identifiers, but it is not perfectly uniform either. Fixing it
-> changes generated output, so it is deferred to a major version.
+> **Note.** Characters are selected by modulo over the 62-character set, which gives a very
+> slight bias toward the first few characters (62 does not divide 2³²). It is immaterial for
+> identifiers and tokens, but the distribution is not exactly uniform.
 
 ## UrlExt — URL helpers
 
