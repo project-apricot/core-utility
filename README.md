@@ -1,6 +1,6 @@
 # ApricotFramework.CoreUtility
 
-[![NuGet](https://img.shields.io/nuget/v/ApricotFramework.CoreUtility.svg)](https://www.nuget.org/packages/ApricotFramework.CoreUtility/)
+[![NuGet](https://img.shields.io/nuget/v/ApricotFramework.CoreUtility.svg?label=ApricotFramework.CoreUtility)](https://www.nuget.org/packages/ApricotFramework.CoreUtility/)
 [![CI](https://github.com/project-apricot/core-utility/actions/workflows/ci.yml/badge.svg)](https://github.com/project-apricot/core-utility/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://github.com/project-apricot/core-utility/blob/main/LICENSE)
 
